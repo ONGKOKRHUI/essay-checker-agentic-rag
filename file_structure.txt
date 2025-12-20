@@ -1,0 +1,33 @@
+essay-grader-rag/
+├── data/
+│   ├── raw/                # Original PDFs and Images
+│   └── processed/          # Extracted text/JSON facts
+├── src/
+│   ├── main.py             # Entry point: Orchestrates the pipeline
+│   ├── config.py           # API keys, DB URLs, Model parameters
+│   │
+│   ├── ingestion/          # "input" & "knowledge base - data"
+│   │   ├── pdf_loader.py   # PDF processing logic
+│   │   ├── vision.py       # OCR/Computer Vision logic
+│   │   └── extractor.py    # Fact extractor (Implemented)
+│   │
+│   ├── database/           # "knowledge base - PGVector"
+│   │   ├── connection.py   # PGVector setup
+│   │   └── vector_ops.py   # Embedding and querying logic
+│   │
+│   ├── agents/             # "Agentic RAG fact checker"
+│   │   ├── factory.py      # Agent initialization
+│   │   ├── tools.py        # Web search & Crawler implementation
+│   │   └── prompts.py      # Ordered prompts (Q, KB, Web)
+│   │
+│   ├── evaluators/         # "Logic checker" & "Grammar checker"
+│   │   ├── logic.py        # Logic scoring & prompt engineering
+│   │   ├── grammar.py      # Language and grammar scoring
+│   │   └── rubrics.py      # Rubric extraction logic (X)
+│   │
+│   └── output/             # "Final LLM as a judge"
+│       └── judge.py        # Final JSON aggregation and report generation
+│
+├── notebooks/              # For R&D and testing extraction accuracy
+├── requirements.txt        # Dependencies
+└── .env                    # Environment variables

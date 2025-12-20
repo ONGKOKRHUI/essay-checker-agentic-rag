@@ -1,0 +1,1 @@
+# Fact Extractor (Implemented)

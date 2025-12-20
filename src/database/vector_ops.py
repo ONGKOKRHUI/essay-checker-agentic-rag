@@ -1,0 +1,1 @@
+#Enbedding and querying logic for vector DB
