@@ -1,0 +1,43 @@
+{
+  "grammar_issues": [
+    {
+      "original_text": "synthesise",
+      "correction": "synthesize",
+      "error_type": "Spelling (British vs. American English)",
+      "explanation": "'Synthesise' is British spelling; consistency should be maintained if American spelling is used elsewhere."
+    },
+    {
+      "original_text": "standard essay writing",
+      "correction": "standard essay-writing",
+      "error_type": "Hyphenation",
+      "explanation": "Compound adjective before a noun requires hyphenation."
+    },
+    {
+      "original_text": "Chen et al. (2024) demonstrate",
+      "correction": "Chen et al. (2024) demonstrate",
+      "error_type": "Subject-verb agreement",
+      "explanation": "'Chen et al.' is plural (referring to multiple authors), so 'demonstrate' is correct."
+    }
+  ],
+  "vocabulary": {
+    "score": 8,
+    "repetitive_words": [],
+    "advanced_words_used": [
+      "unprecedented",
+      "Socratic",
+      "scaffold",
+      "pedagogical"
+    ],
+    "feedback": "Precise and discipline-appropriate. No unnecessary repetition."
+  },
+  "structure": {
+    "sentence_variety_score": 4,
+    "flow_issues": [
+      "Minor abruptness transitioning from 'Body Paragraph 1' to 'Body Paragraph 2'. Consider adding a bridging sentence.",
+      "Conclusion effectively synthesizes arguments without introducing new ideas."
+    ],
+    "feedback": "Clear progression from challenges to benefits to solutions. Topic sentences effectively signpost content."
+  },
+  "overall_tone": "Academic (appropriate)",
+  "summary_critique": "The essay demonstrates strong academic tone and logical structure. Vocabulary is sophisticated ('unprecedented', 'scaffold', 'pedagogical') with minimal redundancy. Sentence structures vary appropriately between complex and simple constructions. Minor grammatical inconsistencies (hyphenation, spelling variants) and occasional abrupt transitions slightly disrupt flow."
+}

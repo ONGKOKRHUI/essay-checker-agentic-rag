@@ -1,0 +1,12 @@
+[
+  {
+    "statement": "Generative Artificial Intelligence (GenAI) tools, such as ChatGPT and Claude, have rapidly emerged.",
+    "correctness_score": "correct",
+    "summary_description": "The statement is accurate as it aligns with verified information confirming the rapid emergence and widespread impact of GenAI tools across multiple domains."
+  },
+  {
+    "statement": "ChatGPT is a Generative AI (GenAI) tool.",
+    "correctness_score": "correct",
+    "summary_description": "The classification of ChatGPT as a Generative AI tool is supported by authoritative sources, including academic studies, whitepapers, and industry reports. Generative AI refers to models that create novel text, images, or other outputs based on patterns learned from training data\u2014a core function of ChatGPT's design (e.g., based on OpenAI's GPT architecture). Verified references consistently align with this definition, confirming the accuracy of the statement."
+  }
+]

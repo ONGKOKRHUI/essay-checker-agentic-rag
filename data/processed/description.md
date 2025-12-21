@@ -1,0 +1,1 @@
+contains extracted text/JSON facts
