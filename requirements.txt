@@ -18,3 +18,6 @@ tavily-python
 
 langchain-chroma
 beautifulsoup4
+
+fastmcp
+langchain_mcp_adapters
