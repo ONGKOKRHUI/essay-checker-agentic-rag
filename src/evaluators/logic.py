@@ -57,7 +57,7 @@ def check_logic(essay_text: str, essay_question: str, callbacks=None):
         result = chain.invoke({
             "question": essay_question, 
             "essay_content": essay_text}, 
-            config={"callbacks": [callbacks]})
+            config={"callbacks": callbacks})
         return result.model_dump()
     except Exception as e:
         print(f"Error during logic analysis: {e}")

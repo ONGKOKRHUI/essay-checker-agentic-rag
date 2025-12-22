@@ -61,7 +61,7 @@ def extract_rubric_data(rubric_text: str, callbacks=None):
     print("Digitizing Rubric...")
     try:
         result = chain.invoke({"text": rubric_text},
-                              config={"callbacks": [callbacks]})
+                              config={"callbacks": callbacks})
         return result.model_dump()
     except Exception as e:
         print(f"Error during rubric extraction: {e}")

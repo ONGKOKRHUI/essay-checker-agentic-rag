@@ -24,7 +24,7 @@ class FactExtraction(BaseModel):
     facts: List[FactsInfo]
 
 # --- Main Logic ---
-def extract_facts_from_docs(docs: list):
+def extract_facts_from_docs(docs: list, callbacks=None):
     """
     Extracts facts from essay content and outputs a list of dictionaries.
     """
@@ -67,7 +67,7 @@ def extract_facts_from_docs(docs: list):
 
         try:
             # We only send the text to the LLM
-            result = extraction_chain.invoke({"text": page_content})
+            result = extraction_chain.invoke({"text": page_content}, config={"callbacks": callbacks})
             print("Extracted facts from page", page_num, "out of", len(docs), "pages")
 
             # We attach the page number manually here.

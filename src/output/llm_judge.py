@@ -13,8 +13,7 @@ def generate_final_report(
     fact_data: list,
     language_data: dict,
     callbacks=None
-):
-    print("👩‍🏫 Synthesizing Final Report...")
+    ):
 
     llm = ChatOpenAI(
         model="deepseek-ai/DeepSeek-V3",
@@ -84,7 +83,7 @@ def generate_final_report(
             "logic_json": json.dumps(logic_data, indent=2),
             "fact_json": json.dumps(fact_data, indent=2),
             "language_json": json.dumps(language_data, indent=2)
-        }, config={"callbacks": [callbacks]})
+        }, config={"callbacks": callbacks})
         return report
     except Exception as e:
         return f"Error generating report: {e}"

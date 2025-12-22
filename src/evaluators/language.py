@@ -56,7 +56,7 @@ def check_language(essay_text: str, callbacks=None):
     print("Analyzing Language...")
     try:
         result = chain.invoke({"text": essay_text}, 
-                              config={"callbacks": [callbacks]})
+                              config={"callbacks": callbacks})
         return result.model_dump()
     except Exception as e:
         print(f"Error during language analysis: {e}")

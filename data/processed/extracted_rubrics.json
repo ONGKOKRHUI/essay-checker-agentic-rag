@@ -1,1 +1,324 @@
-null
+{
+  "title": "ESACa and ESACb IWA Descriptors 2024/2025",
+  "context_notes": [
+    "Principle of charity applies when judging source acknowledgment.",
+    "ESACa requires min. 7 sources (5 from Reading List, 2 self-selected).",
+    "ESACb requires min. 7 sources (3 from Reading List, 4 self-selected).",
+    "Word count: 1500 words (+/-10%). Penalty applies if not met.",
+    "Plagiarism, off-topic, or misappropriation may result in failing all criteria."
+  ],
+  "criteria": [
+    {
+      "category": "Task Fulfilment",
+      "name": "Task Fulfilment",
+      "weight": "50%",
+      "levels": [
+        {
+          "grade_label": "10",
+          "score_range": "10",
+          "descriptor_points": [
+            "Question answered comprehensively, with no irrelevant content; a clear line of argument supporting the stance throughout. A sophisticated response",
+            "Ideas fully developed using appropriate evidence; understanding fully apparent",
+            "Exemplary referencing skills:",
+            "- reference list is entirely accurately formatted",
+            "- reference list matches citations",
+            "- citation formatting is entirely accurate",
+            "- information from sources is acknowledged when appropriate"
+          ]
+        },
+        {
+          "grade_label": "9",
+          "score_range": "9",
+          "descriptor_points": [
+            "Shared features of 8 & 10"
+          ]
+        },
+        {
+          "grade_label": "8",
+          "score_range": "8",
+          "descriptor_points": [
+            "Question answered well, with no irrelevant content; a clear line of argument supporting the stance throughout",
+            "Ideas well-developed using appropriate evidence; may show minor misunderstanding in a few spots",
+            "Strong referencing skills:",
+            "- reference list is accurately formatted with occasional slips",
+            "- reference list matches citations",
+            "- citation formatting is mostly accurate",
+            "- information from sources is acknowledged when appropriate"
+          ]
+        },
+        {
+          "grade_label": "7",
+          "score_range": "7",
+          "descriptor_points": [
+            "Shared features of 6 & above"
+          ]
+        },
+        {
+          "grade_label": "6",
+          "score_range": "6",
+          "descriptor_points": [
+            "Question answered reasonably well; may have a small amount of irrelevance; a line of argument supporting the stance all or most of the time",
+            "Ideas reasonably well-developed using evidence, but one or two ideas lack depth; may show some misunderstanding",
+            "Good referencing skills:",
+            "- reference list is accurately formatted with some slips",
+            "- reference list does not match citations on one occasion",
+            "- citation formatting has some inaccuracies",
+            "- information from sources may not be acknowledged on one or two occasions"
+          ]
+        },
+        {
+          "grade_label": "5",
+          "score_range": "5",
+          "descriptor_points": [
+            "Shared features of 4 & above"
+          ]
+        },
+        {
+          "grade_label": "4",
+          "score_range": "4",
+          "descriptor_points": [
+            "Question answered adequately; may have some irrelevance; a recognisable line of argument supporting the stance some of the time",
+            "Ideas adequately developed using evidence, but lack depth; may show more frequent misunderstanding",
+            "Evidence of referencing skills:",
+            "- reference list has frequent formatting issues",
+            "- reference list does not match citations on two occasions",
+            "- citation formatting has frequent inaccuracies",
+            "- information from sources may not be acknowledged on three occasions"
+          ]
+        },
+        {
+          "grade_label": "3",
+          "score_range": "3",
+          "descriptor_points": [
+            "Question not answered adequately; may have substantial irrelevance; barely recognisable or no stance",
+            "Ideas not adequately developed, with a lack of appropriate evidence; may show more extensive misunderstanding",
+            "Insufficient evidence of referencing skills:",
+            "- reference list has extensive formatting issues",
+            "- reference list does not match citations on three occasions",
+            "- citation formatting has extensive inaccuracies",
+            "- information from sources may not be acknowledged on four or more occasions"
+          ]
+        },
+        {
+          "grade_label": "2",
+          "score_range": "2",
+          "descriptor_points": [
+            "Shared features of 1 & above"
+          ]
+        },
+        {
+          "grade_label": "1",
+          "score_range": "1",
+          "descriptor_points": [
+            "Question not answered; an irrelevant response",
+            "Ideas barely or not at all developed, with a severe lack of appropriate evidence; little evidence of understanding",
+            "Little evidence of referencing skills:",
+            "- there is no reference list",
+            "- reference list does not match citations on four or more occasions",
+            "- there are no citations",
+            "- information from sources is barely acknowledged, if at all"
+          ]
+        },
+        {
+          "grade_label": "0",
+          "score_range": "0",
+          "descriptor_points": [
+            "No submission"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Cohesion & Coherence",
+      "name": "Cohesion & Coherence",
+      "weight": "30%",
+      "levels": [
+        {
+          "grade_label": "10",
+          "score_range": "10",
+          "descriptor_points": [
+            "Highly effective introduction and conclusion, with all required elements present",
+            "Highly effective body paragraph organisation. No structural issues",
+            "Highly effective use of cohesive devices which supports the flow of information",
+            "An uninterrupted logical flow through the entire essay"
+          ]
+        },
+        {
+          "grade_label": "9",
+          "score_range": "9",
+          "descriptor_points": [
+            "Shared features of 8 & 10"
+          ]
+        },
+        {
+          "grade_label": "8",
+          "score_range": "8",
+          "descriptor_points": [
+            "Effective introduction and conclusion, with all required elements present",
+            "Effective body paragraph organisation. Body paragraphs may have minor structural issues",
+            "Effective use of cohesive devices which supports the flow of information with occasional slips",
+            "A mostly uninterrupted logical flow through the entire essay"
+          ]
+        },
+        {
+          "grade_label": "7",
+          "score_range": "7",
+          "descriptor_points": [
+            "Shared features of 6 & above"
+          ]
+        },
+        {
+          "grade_label": "6",
+          "score_range": "6",
+          "descriptor_points": [
+            "Mostly effective introduction and conclusion, although background information and/or summary and/or final comment is somewhat simplistic",
+            "Mostly effective body paragraph organisation. Body paragraphs have some structural issues",
+            "Mostly effective use of cohesive devices which generally supports the flow of information, but there may be some overuse, underuse, repetitive use and/or incorrect use",
+            "A logical flow through much of the essay"
+          ]
+        },
+        {
+          "grade_label": "5",
+          "score_range": "5",
+          "descriptor_points": [
+            "Shared features of 4 & above"
+          ]
+        },
+        {
+          "grade_label": "4",
+          "score_range": "4",
+          "descriptor_points": [
+            "Adequate introduction and conclusion. One or both have structural issues or conclusion is missing re-statement of the thesis statement, summary or final comment",
+            "Adequate body paragraph organisation. Body paragraphs have structural issues, but the reader can still identify each paragraph\u2019s purpose",
+            "Adequate use of cohesive devices, but these may sometimes not support the flow of information. There may be more frequent overuse, underuse, repetitive use and/or incorrect use",
+            "A logical flow through some parts of the essay"
+          ]
+        },
+        {
+          "grade_label": "3",
+          "score_range": "3",
+          "descriptor_points": [
+            "Inadequate introduction and/or conclusion. One or both are poorly structured and/or introduction is missing the thesis statement",
+            "Inadequate body paragraph organisation. One or more have structural issues impacting reader\u2019s ability to identify paragraph\u2019s purpose",
+            "Use of cohesive devices is frequently misleading and does not support the flow of information. There is a large amount of overuse, underuse, repetitive use and/or incorrect use",
+            "A lack of logical flow through much of the essay"
+          ]
+        },
+        {
+          "grade_label": "2",
+          "score_range": "2",
+          "descriptor_points": [
+            "Shared features of 1 & above"
+          ]
+        },
+        {
+          "grade_label": "1",
+          "score_range": "1",
+          "descriptor_points": [
+            "Indistinguishable or missing introduction and/or conclusion",
+            "Indistinguishable or missing body paragraph(s)",
+            "Use of cohesive devices is limited and/or mostly inaccurate",
+            "A severe breakdown in logical flow through much of the essay"
+          ]
+        },
+        {
+          "grade_label": "0",
+          "score_range": "0",
+          "descriptor_points": [
+            "No submission"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Academic Language",
+      "name": "Academic Language",
+      "weight": "20%",
+      "levels": [
+        {
+          "grade_label": "10",
+          "score_range": "10",
+          "descriptor_points": [
+            "Academic register used throughout",
+            "Successful and non-mechanical paraphrasing throughout"
+          ]
+        },
+        {
+          "grade_label": "9",
+          "score_range": "9",
+          "descriptor_points": [
+            "Shared features of 8 & 10"
+          ]
+        },
+        {
+          "grade_label": "8",
+          "score_range": "8",
+          "descriptor_points": [
+            "Academic register used, with only occasional lapses in style and appropriacy",
+            "Mostly successful and non-mechanical paraphrasing. May contain one short chunk but no long chunks"
+          ]
+        },
+        {
+          "grade_label": "7",
+          "score_range": "7",
+          "descriptor_points": [
+            "Shared features of 6 & above"
+          ]
+        },
+        {
+          "grade_label": "6",
+          "score_range": "6",
+          "descriptor_points": [
+            "Academic register used, with some lapses in style",
+            "Often successful but somewhat mechanical paraphrasing. May contain two short chunks but no long chunks"
+          ]
+        },
+        {
+          "grade_label": "5",
+          "score_range": "5",
+          "descriptor_points": [
+            "Shared features of 4 & above"
+          ]
+        },
+        {
+          "grade_label": "4",
+          "score_range": "4",
+          "descriptor_points": [
+            "Academic register is attempted, but lapses in style are frequent",
+            "Attempts paraphrasing, but frequently mechanical. May contain three short chunks and/or one long chunk"
+          ]
+        },
+        {
+          "grade_label": "3",
+          "score_range": "3",
+          "descriptor_points": [
+            "Academic register rarely attempted or unsuccessful",
+            "Very little attempt made to paraphrase, with four short chunks and/or two long chunks"
+          ]
+        },
+        {
+          "grade_label": "2",
+          "score_range": "2",
+          "descriptor_points": [
+            "Shared features of 1 & above"
+          ]
+        },
+        {
+          "grade_label": "1",
+          "score_range": "1",
+          "descriptor_points": [
+            "Academic register is not attempted: hardly any evidence of taught skills",
+            "(Almost) no attempt to paraphrase. Extensive copying from the source(s)"
+          ]
+        },
+        {
+          "grade_label": "0",
+          "score_range": "0",
+          "descriptor_points": [
+            "No submission"
+          ]
+        }
+      ]
+    }
+  ]
+}

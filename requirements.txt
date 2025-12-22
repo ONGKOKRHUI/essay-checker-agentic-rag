@@ -1,7 +1,7 @@
 langchain
 
 python-dotenv
-# langgraph>=0.3.4
+langgraph>=0.3.4
 langchain-community 
 pydantic 
 pypdf

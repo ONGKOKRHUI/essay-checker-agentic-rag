@@ -1,1 +1,17 @@
-null
+{
+  "relevance": {
+    "is_off_topic": false,
+    "score": 9,
+    "thesis_alignment": "The essay consistently aligns with the thesis that universities should critically integrate GenAI rather than prohibit it, addressing both challenges and benefits.",
+    "missing_key_points": []
+  },
+  "structure": {
+    "has_clear_intro": true,
+    "has_clear_conclusion": true,
+    "flow_score": 8,
+    "structural_weaknesses": []
+  },
+  "identified_fallacies": [],
+  "argument_strength_score": 8,
+  "summary_critique": "The essay effectively addresses the prompt by discussing challenges to academic integrity, benefits for student learning, and the need for assessment reform. It maintains strong relevance and logical flow, though some areas could benefit from deeper analysis or additional examples."
+}

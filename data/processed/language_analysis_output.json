@@ -1,1 +1,41 @@
-null
+{
+  "grammar_issues": [
+    {
+      "original_text": "synthesise",
+      "correction": "synthesize",
+      "error_type": "spelling",
+      "explanation": "The British English spelling 'synthesise' is acceptable in UK contexts, but 'synthesize' is the standard American English spelling. Consistency with regional spelling conventions should be maintained."
+    },
+    {
+      "original_text": "\u201ccrisis of trust\u201d",
+      "correction": "a 'crisis of trust'",
+      "error_type": "punctuation",
+      "explanation": "The phrase 'crisis of trust' is a direct quotation and should be enclosed in single quotation marks (consistent with British English conventions) or double quotation marks (consistent with American English conventions)."
+    }
+  ],
+  "vocabulary": {
+    "score": 4,
+    "repetitive_words": [
+      "assessments",
+      "learning"
+    ],
+    "advanced_words_used": [
+      "unprecedented",
+      "scaffold",
+      "autonomy",
+      "pedagogical",
+      "resilient"
+    ],
+    "feedback": "Vocabulary is sophisticated and discipline-appropriate, with effective use of technical terms related to education and AI. No redundant or informal phrasing is present."
+  },
+  "structure": {
+    "sentence_variety_score": 4,
+    "flow_issues": [
+      "The transition between Body Paragraph 1 and Body Paragraph 2 could be slightly smoother. Consider adding a transitional phrase to bridge the shift from discussing challenges to benefits, such as 'Despite these challenges, GenAI also presents significant opportunities...'",
+      "The conclusion effectively summarizes the main points but could reinforce the thesis more explicitly by restating the call for 'critical integration' mentioned in the introduction."
+    ],
+    "feedback": "The essay follows a clear and logical structure with a well-defined introduction, body paragraphs, and conclusion. Each section transitions smoothly to the next, maintaining coherence throughout."
+  },
+  "overall_tone": "The tone is appropriately academic, with a balanced and analytical approach. The language is formal and precise, suitable for an academic essay.",
+  "summary_critique": "The essay demonstrates strong command of academic writing conventions, with minor issues in spelling consistency and punctuation. The structure is well-organized, though transitions between sections could be slightly refined. Sentence variety is good, with a mix of complex and simple structures. The tone remains appropriately formal and analytical throughout."
+}
