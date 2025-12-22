@@ -1,3 +1,6 @@
+LangFuse Trace:
+https://cloud.langfuse.com/project/cmjgp9iu900bzad07hu7kkjdt/traces?filter=inputCost%3Bnumber%3B%3B%3E%3D%3B0%2CinputCost%3Bnumber%3B%3B%3C%3D%3B100%2CoutputCost%3Bnumber%3B%3B%3E%3D%3B0%2CoutputCost%3Bnumber%3B%3B%3C%3D%3B100%2CtotalCost%3Bnumber%3B%3B%3E%3D%3B0%2CtotalCost%3Bnumber%3B%3B%3C%3D%3B100&traceTab=log&peek=72bf26308c5b4c43370113ea4eee9ff4&timestamp=2025-12-22T09%3A59%3A27.812Z&observation=4929d75e343f77d0&view=timeline 
+
 (venv) PS C:\Users\HP\Documents\repos\essay-checker-agentic-rag> python -m src.main
 Loading existing Vector Store...
 🚀 Starting Essay Checker Agentic Pipeline...
