@@ -20,9 +20,14 @@ from src.evaluators.logic import check_logic
 from src.evaluators.language import check_language
 from src.agents.factory import check_facts
 from src.output.llm_judge import generate_final_report
+from src.observability import get_langfuse_handler
 
 async def main():
     print("🚀 Starting Essay Checker Agentic Pipeline...\n")
+
+    # 0. Initialize Langfuse
+    langfuse_handler = get_langfuse_handler()
+    callbacks = [langfuse_handler] if langfuse_handler else []
 
     # 1. Load Documents
     print("📄 Loading Documents...")
@@ -70,7 +75,8 @@ async def main():
         rubric_data=rubric_data,
         logic_data=logic_data,
         fact_data=verified_facts,
-        language_data=language_data
+        language_data=language_data,
+        callbacks=callbacks # use Langfuse to track token usage and cost
     )
 
     # 7. Save Report

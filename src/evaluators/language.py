@@ -31,7 +31,7 @@ class LanguageAnalysisResult(BaseModel):
     summary_critique: str = Field(..., description="A concise summary of linguistic quality.")
 
 # --- Logic ---
-def check_language(essay_text: str):
+def check_language(essay_text: str, callbacks=None):
     llm = ChatOpenAI(
         model="deepseek-ai/DeepSeek-V3",
         openai_api_key=OPENAI_API_KEY,
@@ -55,7 +55,8 @@ def check_language(essay_text: str):
     
     print("Analyzing Language...")
     try:
-        result = chain.invoke({"text": essay_text})
+        result = chain.invoke({"text": essay_text}, 
+                              config={"callbacks": [callbacks]})
         return result.model_dump()
     except Exception as e:
         print(f"Error during language analysis: {e}")

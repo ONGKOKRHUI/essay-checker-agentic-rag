@@ -38,3 +38,8 @@ FINAL_REPORT_PATH = DATA_DIR / "final_report/final_report.md"
 # Create directories if they don't exist
 PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
 (DATA_DIR / "final_report").mkdir(parents=True, exist_ok=True)
+
+# Langfuse Config
+LANGFUSE_PUBLIC_KEY = os.getenv("LANGFUSE_PUBLIC_KEY")
+LANGFUSE_SECRET_KEY = os.getenv("LANGFUSE_SECRET_KEY")
+LANGFUSE_BASE_URL = os.getenv("LANGFUSE_BASE_URL")

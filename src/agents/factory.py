@@ -28,7 +28,7 @@ Logic Flow:
 Return the result strictly as a JSON object matching the FactEvaluation schema."""
 
 # --- Agent Runner ---
-async def check_facts(facts_list: List[dict]):
+async def check_facts(facts_list: List[dict], callbacks=None):
     """
     Async function to run the agent over a list of facts.
     """
@@ -76,12 +76,12 @@ async def check_facts(facts_list: List[dict]):
             inputs = {"messages": [HumanMessage(content=f"Evaluate this fact: {statement}")]}
             
             # Use structured output parsing
-            response = await agent.ainvoke(inputs)
+            response = await agent.ainvoke(inputs, config={"callbacks": callbacks})
             
             # The last message contains the result. 
             # We can force the agent to return the structured schema
             structured_llm = llm_model.with_structured_output(FactEvaluation)
-            final_eval = await structured_llm.ainvoke(response["messages"][-1].content)
+            final_eval = await structured_llm.ainvoke(response["messages"][-1].content, config={"callbacks": callbacks})
             
             results.append(final_eval.model_dump())
             print(f"Validated fact {i+1}: {final_eval.correctness_score}")

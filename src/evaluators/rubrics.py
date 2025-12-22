@@ -32,7 +32,7 @@ class RubricExtractionResult(BaseModel):
     criteria: List[AssessmentCriterion]
 
 # --- Logic ---
-def extract_rubric_data(rubric_text: str):
+def extract_rubric_data(rubric_text: str, callbacks=None):
     llm = ChatOpenAI(
         model="deepseek-ai/DeepSeek-V3",
         openai_api_key=OPENAI_API_KEY,
@@ -60,7 +60,8 @@ def extract_rubric_data(rubric_text: str):
     
     print("Digitizing Rubric...")
     try:
-        result = chain.invoke({"text": rubric_text})
+        result = chain.invoke({"text": rubric_text},
+                              config={"callbacks": [callbacks]})
         return result.model_dump()
     except Exception as e:
         print(f"Error during rubric extraction: {e}")

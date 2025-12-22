@@ -31,7 +31,7 @@ class LogicAnalysisResult(BaseModel):
     summary_critique: str = Field(..., description="A concise summary of the logical quality.")
 
 # --- Logic ---
-def check_logic(essay_text: str, essay_question: str):
+def check_logic(essay_text: str, essay_question: str, callbacks=None):
     llm = ChatOpenAI(
         model="deepseek-ai/DeepSeek-V3",
         openai_api_key=OPENAI_API_KEY,
@@ -56,8 +56,8 @@ def check_logic(essay_text: str, essay_question: str):
     try:
         result = chain.invoke({
             "question": essay_question, 
-            "essay_content": essay_text
-        })
+            "essay_content": essay_text}, 
+            config={"callbacks": [callbacks]})
         return result.model_dump()
     except Exception as e:
         print(f"Error during logic analysis: {e}")
