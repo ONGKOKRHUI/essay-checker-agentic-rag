@@ -25,38 +25,45 @@ async def main():
     print("🚀 Starting Essay Checker Agentic Pipeline...\n")
 
     # 1. Load Documents
+    print("📄 Loading Documents...")
     essay_docs = load_pdf(ESSAY_PDF_PATH)
     essay_text = load_pdf_as_text(ESSAY_PDF_PATH)
     question_text = load_pdf_as_text(QUESTION_PDF_PATH)
     rubric_text = load_pdf_as_text(RUBRIC_PDF_PATH)
 
     # 2. Extract Rubric Criteria
+    print("🎯 Extracting Rubric Criteria...")
     rubric_data = extract_rubric_data(rubric_text)
     with open(RUBRICS_JSON_PATH, "w", encoding="utf-8") as f:
         json.dump(rubric_data, f, indent=2)
 
     # 3. Logic & Relevance Check
+    print("👩‍🏫 Analyzing Logic...")
     logic_data = check_logic(essay_text, question_text)
     with open(LOGIC_OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump(logic_data, f, indent=2)
 
     # 4. Language & Grammar Check
+    print("👩‍🏫 Analyzing Language...")
     language_data = check_language(essay_text)
     with open(LANGUAGE_OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump(language_data, f, indent=2)
 
     # 5. Extract Facts & Run Agentic Fact Checker
+    print("👩‍🏫 Extracting Facts...")
     raw_facts = extract_facts_from_docs(essay_docs)
     with open(FACTS_JSON_PATH, "w", encoding="utf-8") as f:
         for fact in raw_facts:
             f.write(json.dumps(fact) + "\n")
     
     # Run Async Fact Checker
+    print("👩‍🏫 Checking Facts...")
     verified_facts = await check_facts(raw_facts)
     with open(FACT_CHECK_OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump(verified_facts, f, indent=2)
 
     # 6. Final Judge (Synthesize Report)
+    print("👩‍🏫 Synthesizing Final Report...")
     final_report = generate_final_report(
         essay_content=essay_text,
         essay_question=question_text,

@@ -1,4 +1,4 @@
-# Fact Extractor (Implemented)
+# Fact Extractor 
 from typing import List
 from pydantic import BaseModel, Field
 from langchain_openai import ChatOpenAI

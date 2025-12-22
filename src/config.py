@@ -33,7 +33,7 @@ RUBRICS_JSON_PATH = PROCESSED_DIR / "extracted_rubrics.json"
 FACT_CHECK_OUTPUT_PATH = PROCESSED_DIR / "fact_checking_output.json"
 LOGIC_OUTPUT_PATH = PROCESSED_DIR / "logic_analysis_output.json"
 LANGUAGE_OUTPUT_PATH = PROCESSED_DIR / "language_analysis_output.json"
-FINAL_REPORT_PATH = DATA_DIR / "final_report/final_report.txt"
+FINAL_REPORT_PATH = DATA_DIR / "final_report/final_report.md"
 
 # Create directories if they don't exist
 PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
