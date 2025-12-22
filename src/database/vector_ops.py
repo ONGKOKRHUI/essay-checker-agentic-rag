@@ -40,7 +40,7 @@ def setup_knowledge_base():
             return None
 
         # split documents
-        text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
+        text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
         splits = text_splitter.split_documents(docs)
         
         vectorstore = Chroma.from_documents(
@@ -50,5 +50,5 @@ def setup_knowledge_base():
                 persist_directory=str(VECTOR_DB_PATH)
             )
 
-    retriever = vectorstore.as_retriever(search_kwargs={"k": 5})
+    retriever = vectorstore.as_retriever(search_kwargs={"k": 2})
     return retriever

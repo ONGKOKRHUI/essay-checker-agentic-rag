@@ -12,20 +12,63 @@ from src.agents.tools import search_knowledge_base
 
 # --- Schemas ---
 class FactEvaluation(BaseModel):
-    statement: str = Field(description="The original fact statement")
+    statement: str = Field(description="The verbatim excerpt of the statement")
     correctness_score: Literal["correct", "wrong", "undetermined"] = Field(description="The final verdict")
     summary_description: str = Field(description="Summary of why this verdict was reached")
+    #search_results: str = Field(description="A short verbatim of the search results")
+    source_document: str = Field(description="One source document - if it is from knowledge base, output the *document name* and *page number*, if it is from web, output the *URL*")
 
 # --- System Prompt ---
-SYSTEM_PROMPT = """You are a fact-checking assistant. 
-Logic Flow:
-1. For every fact, first use 'search_knowledge_base'.
-2. If the retrieved info supports the fact, mark as 'correct'.
-3. If it contradicts, mark as 'wrong'.
-4. If the knowledge base is insufficient (neutral/unknown), you MUST call 'web_search' ONCE to check online.
-5. If web results still don't clarify, mark as 'undetermined'.
+SYSTEM_PROMPT = f"""
+You are a fact-checking assistant that verifies a single factual statement.
 
-Return the result strictly as a JSON object matching the FactEvaluation schema."""
+You MUST follow the tool usage and decision rules exactly.
+
+====================
+TOOL USAGE RULES
+====================
+
+1. You MUST call `search_knowledge_base` exactly ONCE as your first step.
+2. After reviewing the retrieved content:
+   - If the content clearly SUPPORTS the statement → verdict = "correct"
+   - If the content clearly CONTRADICTS the statement → verdict = "wrong"
+   - If the content is unrelated, neutral, ambiguous, or missing key information → verdict is NOT decided yet
+3. ONLY if the knowledge base is insufficient as defined above, you MAY call `search_web` at most ONCE.
+4. After web search:
+   - If web content clearly supports → "correct"
+   - If web content clearly contradicts → "wrong"
+   - If still unclear or conflicting → "undetermined"
+5. You MUST NOT call any tool more than once.
+
+====================
+DEFINITIONS
+====================
+
+- "Supports": Explicitly states the same fact without contradiction.
+- "Contradicts": Explicitly states the opposite of the fact.
+- "Insufficient": Mentions the topic but does not confirm or deny the exact claim.
+
+====================
+OUTPUT FORMAT
+====================
+
+Return ONLY a valid JSON object that strictly matches this schema:
+
+{FactEvaluation.model_json_schema()}
+
+====================
+SOURCE DOCUMENT RULES
+====================
+
+- If the verdict is based on the knowledge base:
+  - source_document MUST be: "<document_name>, page <page_number>"
+- If the verdict is based on web search:
+  - source_document MUST be a single URL
+- If verdict is "undetermined":
+  - source_document MUST be an empty string ""
+
+Do NOT include markdown, explanations outside JSON, or multiple sources.
+"""
 
 # --- Agent Runner ---
 async def check_facts(facts_list: List[dict], callbacks=None):
@@ -55,6 +98,8 @@ async def check_facts(facts_list: List[dict], callbacks=None):
             model="deepseek-ai/DeepSeek-V3",
             openai_api_key=OPENAI_API_KEY,
             openai_api_base=SILICON_FLOW_BASE_URL, 
+            temperature=0.2,
+            max_tokens=800,
         )   
 
         # 3. Create the agent

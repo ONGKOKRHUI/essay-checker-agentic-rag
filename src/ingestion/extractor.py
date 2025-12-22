@@ -68,14 +68,16 @@ def extract_facts_from_docs(docs: list):
         try:
             # We only send the text to the LLM
             result = extraction_chain.invoke({"text": page_content})
-            
+            print("Extracted facts from page", page_num, "out of", len(docs), "pages")
+
             # We attach the page number manually here.
             if result and result.facts:
                 for fact in result.facts:
                     fact_dict = fact.model_dump() # Updated from .dict()
                     fact_dict['page_number'] = page_num
                     all_facts_with_metadata.append(fact_dict)
-                    
+            print("Page", page_num, "has", len(result.facts), "facts")
+
         except Exception as e:
             print(f"Error on page {page_num}: {e}")
             

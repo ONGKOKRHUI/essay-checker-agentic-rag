@@ -35,37 +35,43 @@ async def main():
     essay_text = load_pdf_as_text(ESSAY_PDF_PATH)
     question_text = load_pdf_as_text(QUESTION_PDF_PATH)
     rubric_text = load_pdf_as_text(RUBRIC_PDF_PATH)
+    print(f"📄 Documents Loaded Successfully.")
 
     # 2. Extract Rubric Criteria
     print("🎯 Extracting Rubric Criteria...")
-    rubric_data = extract_rubric_data(rubric_text)
+    rubric_data = extract_rubric_data(rubric_text, callbacks)
     with open(RUBRICS_JSON_PATH, "w", encoding="utf-8") as f:
         json.dump(rubric_data, f, indent=2)
+    print(f"🎯 Rubric Criteria Extracted Successfully.")
 
     # 3. Logic & Relevance Check
     print("👩‍🏫 Analyzing Logic...")
-    logic_data = check_logic(essay_text, question_text)
+    logic_data = check_logic(essay_text, question_text, callbacks)
     with open(LOGIC_OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump(logic_data, f, indent=2)
+    print(f"👩‍🏫 Logic Analyzed Successfully.")
 
     # 4. Language & Grammar Check
     print("👩‍🏫 Analyzing Language...")
-    language_data = check_language(essay_text)
+    language_data = check_language(essay_text, callbacks)
     with open(LANGUAGE_OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump(language_data, f, indent=2)
+    print(f"👩‍🏫 Language Analyzed Successfully.")
 
     # 5. Extract Facts & Run Agentic Fact Checker
     print("👩‍🏫 Extracting Facts...")
-    raw_facts = extract_facts_from_docs(essay_docs)
+    raw_facts = extract_facts_from_docs(essay_docs, callbacks)
     with open(FACTS_JSON_PATH, "w", encoding="utf-8") as f:
         for fact in raw_facts:
             f.write(json.dumps(fact) + "\n")
+    print(f"👩‍🏫 Facts Extracted Successfully.")
     
     # Run Async Fact Checker
     print("👩‍🏫 Checking Facts...")
-    verified_facts = await check_facts(raw_facts)
+    verified_facts = await check_facts(raw_facts, callbacks)
     with open(FACT_CHECK_OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump(verified_facts, f, indent=2)
+    print(f"👩‍🏫 All Facts Checked Successfully.")
 
     # 6. Final Judge (Synthesize Report)
     print("👩‍🏫 Synthesizing Final Report...")
@@ -78,6 +84,7 @@ async def main():
         language_data=language_data,
         callbacks=callbacks # use Langfuse to track token usage and cost
     )
+    print(f"👩‍🏫 Final Report Synthesized Successfully.")
 
     # 7. Save Report
     with open(FINAL_REPORT_PATH, "w", encoding="utf-8") as f:

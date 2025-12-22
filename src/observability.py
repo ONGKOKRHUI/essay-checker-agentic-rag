@@ -1,5 +1,5 @@
 from langfuse.langchain import CallbackHandler
-from src.config import LANGFUSE_PUBLIC_KEY, LANGFUSE_SECRET_KEY, LANGFUSE_BASE_URL
+from src.config import LANGFUSE_PUBLIC_KEY, LANGFUSE_SECRET_KEY
 
 def get_langfuse_handler():
     """
@@ -10,8 +10,4 @@ def get_langfuse_handler():
         print("⚠️ Langfuse keys not found. Tracing disabled.")
         return None
         
-    return CallbackHandler(
-        public_key=LANGFUSE_PUBLIC_KEY,
-        secret_key=LANGFUSE_SECRET_KEY,
-        host=LANGFUSE_BASE_URL
-    )
+    return CallbackHandler()
