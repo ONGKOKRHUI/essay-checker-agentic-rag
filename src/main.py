@@ -20,14 +20,14 @@ from src.evaluators.logic import check_logic
 from src.evaluators.language import check_language
 from src.agents.factory import check_facts
 from src.output.llm_judge import generate_final_report
-from src.observability import get_langfuse_handler
+#from src.observability import get_langfuse_handler
 
 async def main():
     print("🚀 Starting Essay Checker Agentic Pipeline...\n")
 
     # 0. Initialize Langfuse
-    langfuse_handler = get_langfuse_handler()
-    callbacks = [langfuse_handler] if langfuse_handler else []
+    #langfuse_handler = get_langfuse_handler()
+    #callbacks = [langfuse_handler] if langfuse_handler else []
 
     # 1. Load Documents
     print("📄 Loading Documents...")
@@ -39,28 +39,28 @@ async def main():
 
     # 2. Extract Rubric Criteria
     print("🎯 Extracting Rubric Criteria...")
-    rubric_data = extract_rubric_data(rubric_text, callbacks)
+    rubric_data = extract_rubric_data(rubric_text)
     with open(RUBRICS_JSON_PATH, "w", encoding="utf-8") as f:
         json.dump(rubric_data, f, indent=2)
     print(f"🎯 Rubric Criteria Extracted Successfully.")
 
     # 3. Logic & Relevance Check
     print("🧠 Analyzing Logic...")
-    logic_data = check_logic(essay_text, question_text, callbacks)
+    logic_data = check_logic(essay_text, question_text)
     with open(LOGIC_OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump(logic_data, f, indent=2)
     print(f"🧠 Logic Analyzed Successfully.")
 
     # 4. Language & Grammar Check
     print("🗣️ Analyzing Language...")
-    language_data = check_language(essay_text, callbacks)
+    language_data = check_language(essay_text)
     with open(LANGUAGE_OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump(language_data, f, indent=2)
     print(f"🗣️ Language Analyzed Successfully.")
 
     # 5. Extract Facts & Run Agentic Fact Checker
     print("🤖 Extracting Facts...")
-    raw_facts = extract_facts_from_docs(essay_docs, callbacks)
+    raw_facts = extract_facts_from_docs(essay_docs)
     with open(FACTS_JSON_PATH, "w", encoding="utf-8") as f:
         for fact in raw_facts:
             f.write(json.dumps(fact) + "\n")
@@ -68,7 +68,7 @@ async def main():
     
     # Run Async Fact Checker
     print("🔃 Checking Facts...")
-    verified_facts = await check_facts(raw_facts, callbacks)
+    verified_facts = await check_facts(raw_facts)
     with open(FACT_CHECK_OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump(verified_facts, f, indent=2)
     print(f"✅ All Facts Checked Successfully.")
@@ -81,8 +81,7 @@ async def main():
         rubric_data=rubric_data,
         logic_data=logic_data,
         fact_data=verified_facts,
-        language_data=language_data,
-        callbacks=callbacks # use Langfuse to track token usage and cost
+        language_data=language_data
     )
     print(f"✅ Final Report Synthesized Successfully.")
 

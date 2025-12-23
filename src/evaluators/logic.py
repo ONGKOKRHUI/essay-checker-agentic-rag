@@ -3,6 +3,7 @@ from typing import List
 from pydantic import BaseModel, Field
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
+from src.observability import get_langfuse_handler
 from src.config import OPENAI_API_KEY, SILICON_FLOW_BASE_URL
 
 # --- Schemas ---
@@ -31,7 +32,10 @@ class LogicAnalysisResult(BaseModel):
     summary_critique: str = Field(..., description="A concise summary of the logical quality.")
 
 # --- Logic ---
-def check_logic(essay_text: str, essay_question: str, callbacks=None):
+def check_logic(essay_text: str, essay_question: str):
+
+    callback = get_langfuse_handler()
+
     llm = ChatOpenAI(
         model="deepseek-ai/DeepSeek-V3",
         openai_api_key=OPENAI_API_KEY,
@@ -57,7 +61,9 @@ def check_logic(essay_text: str, essay_question: str, callbacks=None):
         result = chain.invoke({
             "question": essay_question, 
             "essay_content": essay_text}, 
-            config={"callbacks": callbacks})
+            config={"callbacks": [callback], 
+                    "metadata": {"langfuse_tags": ["logic-analysis"]}
+                    })
         return result.model_dump()
     except Exception as e:
         print(f"Error during logic analysis: {e}")

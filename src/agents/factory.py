@@ -6,6 +6,7 @@ from langchain.agents import create_agent
 from langchain_openai import ChatOpenAI
 from langchain_core.messages import HumanMessage
 from langchain_mcp_adapters.client import MultiServerMCPClient
+from src.observability import get_langfuse_handler
 
 from src.config import OPENAI_API_KEY, SILICON_FLOW_BASE_URL, JINA_API_KEY
 from src.agents.tools import search_knowledge_base
@@ -71,7 +72,7 @@ Do NOT include markdown, explanations outside JSON, or multiple sources.
 """
 
 # --- Agent Runner ---
-async def check_facts(facts_list: List[dict], callbacks=None):
+async def check_facts(facts_list: List[dict]):
     """
     Async function to run the agent over a list of facts.
     """
@@ -110,6 +111,8 @@ async def check_facts(facts_list: List[dict], callbacks=None):
             name = "FactCheckerAgent",
         )
 
+        callback = get_langfuse_handler()
+
         results = []
         print(f"Starting fact check for {len(facts_list)} facts...")
         
@@ -121,12 +124,14 @@ async def check_facts(facts_list: List[dict], callbacks=None):
             inputs = {"messages": [HumanMessage(content=f"Evaluate this fact: {statement}")]}
             
             # Use structured output parsing
-            response = await agent.ainvoke(inputs, config={"callbacks": callbacks})
+            response = await agent.ainvoke(inputs, config={"callbacks": [callback],
+                                                           "metadata": {"langfuse_tags": ["agentic-fact-checker"]}
+                                                           })
             
             # The last message contains the result. 
             # We can force the agent to return the structured schema
             structured_llm = llm_model.with_structured_output(FactEvaluation)
-            final_eval = await structured_llm.ainvoke(response["messages"][-1].content, config={"callbacks": callbacks})
+            final_eval = await structured_llm.ainvoke(response["messages"][-1].content)
             
             results.append(final_eval.model_dump())
             print(f"Validated fact {i+1}: {final_eval.correctness_score}")

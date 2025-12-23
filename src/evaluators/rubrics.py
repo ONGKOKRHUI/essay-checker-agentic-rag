@@ -3,6 +3,7 @@ from typing import List, Optional
 from pydantic import BaseModel, Field
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
+from src.observability import get_langfuse_handler
 from src.config import OPENAI_API_KEY, SILICON_FLOW_BASE_URL
 
 # --- Schemas ---
@@ -32,7 +33,10 @@ class RubricExtractionResult(BaseModel):
     criteria: List[AssessmentCriterion]
 
 # --- Logic ---
-def extract_rubric_data(rubric_text: str, callbacks=None):
+def extract_rubric_data(rubric_text: str):
+
+    callback = get_langfuse_handler()
+
     llm = ChatOpenAI(
         model="deepseek-ai/DeepSeek-V3",
         openai_api_key=OPENAI_API_KEY,
@@ -61,7 +65,9 @@ def extract_rubric_data(rubric_text: str, callbacks=None):
     print("Digitizing Rubric...")
     try:
         result = chain.invoke({"text": rubric_text},
-                              config={"callbacks": callbacks})
+                              config={"callbacks": [callback],
+                                      "metadata": {"langfuse_tags": ["rubric-extraction"]},
+                                      })
         return result.model_dump()
     except Exception as e:
         print(f"Error during rubric extraction: {e}")

@@ -3,6 +3,8 @@ import json
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
+from src.observability import get_langfuse_handler
+
 from src.config import OPENAI_API_KEY, SILICON_FLOW_BASE_URL
 
 def generate_final_report(
@@ -12,8 +14,10 @@ def generate_final_report(
     logic_data: dict,
     fact_data: list,
     language_data: dict,
-    callbacks=None
+    #callbacks=None
     ):
+
+    callback = get_langfuse_handler()
 
     llm = ChatOpenAI(
         model="deepseek-ai/DeepSeek-V3",
@@ -83,7 +87,9 @@ def generate_final_report(
             "logic_json": json.dumps(logic_data, indent=2),
             "fact_json": json.dumps(fact_data, indent=2),
             "language_json": json.dumps(language_data, indent=2)
-        }, config={"callbacks": callbacks})
+        }, config={"callbacks": [callback],
+                   "metadata": {"langfuse_tags": ["llm_judge"]},
+                   })
         return report
     except Exception as e:
         return f"Error generating report: {e}"
