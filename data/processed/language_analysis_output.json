@@ -1,39 +1,41 @@
 {
   "grammar_issues": [
     {
-      "original_text": "Beyond Prohibition: Integrating Generative AI into Higher Education Assessment and Learning",
-      "correction": "The title should be formatted consistently. Either capitalize all major words ('Beyond Prohibition: Integrating Generative AI Into Higher Education Assessment and Learning') or only the first word ('Beyond prohibition: Integrating generative AI into higher education assessment and learning').",
-      "error_type": "Capitalization",
-      "explanation": "Titles should follow consistent capitalization rules."
+      "original_text": "The rapid emergence of Generative Artificial Intelligence (GenAI) tools, such as ChatGPT and Claude, has fundamentally disrupted the landscape of higher education.",
+      "correction": "The rapid emergence of Generative Artificial Intelligence (GenAI) tools, such as ChatGPT and Claude, has fundamentally disrupted the landscape of higher education.",
+      "error_type": "article_usage",
+      "explanation": "The article 'the' is correctly used before 'rapid emergence' to specify the particular emergence being discussed."
     },
     {
-      "original_text": "synthesise",
-      "correction": "Change 'synthesise' to 'synthesize' for American English consistency.",
-      "error_type": "Spelling",
-      "explanation": "The essay appears to use American English ('summarization' later), so 'synthesize' should match."
+      "original_text": "Chen et al. (2024) demonstrate that when AI is used as a Socratic tutor\u2014prompting learners through guided questioning rather than direct answers\u2014students show improved critical thinking skills, particularly in STEM disciplines.",
+      "correction": "Chen et al. (2024) demonstrate that when AI is used as a Socratic tutor\u2014prompting learners through guided questioning rather than direct answers\u2014students show improved critical thinking skills, particularly in STEM disciplines.",
+      "error_type": "punctuation",
+      "explanation": "The em dash (\u2014) is correctly used here to set off parenthetical information."
     }
   ],
   "vocabulary": {
-    "score": 9,
+    "score": 4,
     "repetitive_words": [
-      "assessment"
+      "assessment",
+      "learning"
     ],
     "advanced_words_used": [
+      "fundamentally",
       "unprecedented",
+      "erosion",
       "scaffold",
-      "autonomy",
-      "pedagogical"
+      "resilient"
     ],
-    "feedback": "Vocabulary is appropriately academic but could include more discipline-specific terms related to education technology."
+    "feedback": "Vocabulary is sophisticated and appropriate for an academic context."
   },
   "structure": {
-    "sentence_variety_score": 8,
+    "sentence_variety_score": 4,
     "flow_issues": [
-      "The shift from discussing challenges to benefits in Body Paragraph 2 feels abrupt. Add a transitional sentence.",
-      "The conclusion could better mirror the introduction's language for cohesion."
+      "The transition between Body Paragraph 1 and Body Paragraph 2 could be smoother. Consider adding a transitional sentence that links the challenges of academic integrity to the benefits of learning.",
+      "The conclusion effectively summarizes the main points but could be strengthened by reiterating the thesis statement more explicitly."
     ],
-    "feedback": "The essay follows a clear structure with introduction, body paragraphs, and conclusion. However, transitions between sections could be smoother."
+    "feedback": "The essay follows a clear and logical structure: introduction, three body paragraphs, and conclusion. Each section transitions smoothly to the next."
   },
-  "overall_tone": "Academic",
-  "summary_critique": "The essay demonstrates strong academic writing mechanics with varied sentence structures and appropriate terminology. Minor issues with capitalization consistency and British/American English mixing detract from polish. Paragraph development is logical but would benefit from stronger transitional phrases. Citations are properly integrated."
+  "overall_tone": "The tone is academic and formal, appropriate for higher education discourse.",
+  "summary_critique": "The essay demonstrates strong command of academic language and structure. Minor improvements in transitions and conclusion reinforcement would enhance clarity and impact."
 }
