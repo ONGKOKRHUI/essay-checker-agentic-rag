@@ -1,0 +1,116 @@
+Tags for traces of different models:
+Rubric-extraction – given a rubrics as a string, extract the rubrics into a requested json format
+Agentic-fact-checker – given a list of facts in jsonl, use the knowledge base search tool and the web search tool, provide validation on whether the fact is correct and return a json, this will be used on individual distinct facts 
+Language-analysis – given the essay, evaluate the language and return a requested json format
+Logic-analysis - given the essay, evaluate the logic and return a requested json format
+Llm-judge – use the json output of agentic fact checker, language analysis, logic analysis and based on the rubrics, give a final analysis report in markdown
+Langfuse Based Evaluation Metrics
+1.	Conciseness: It evaluates how directly and succinctly a generated answer addresses the given query, scoring from 0 to 1 based on the absence of unnecessary, irrelevant, or excessive information. Input: Query: {{query}} Generation: {{generation}}
+2.	ContextCorrectness: It evaluates how accurately and completely the provided context aligns with the ground truth, scoring from 0 to 1 based on whether all key facts are included and no incorrect or unsupported information is present. Input: Query: {{query}} Context: {{context}} Ground truth: {{ground_truth}}
+3.	ContextRelevance: It evaluates how well the provided context stays focused on and meaningfully supports the specific query, scoring from 0 to 1 based on whether the information directly enhances understanding without introducing unrelated or extraneous details. Input: Query: {{query}} Context: {{context}}
+4.	Correctness: It evaluates how factually accurate a generated answer is compared to the ground truth, scoring from 0 to 1 based on whether all key facts are included and no unsupported, exaggerated, or incorrect claims are made. Input: Query: {{query}} Generation: {{generation}} Ground truth: {{ground_truth}}
+5.	Hallucination: It evaluates how much a generated answer departs from factual knowledge or logical inference, scoring from 0 to 1 based on the presence of implausible, misleading, or entirely unsupported claims. Input: Query: {{query}} Generation: {{generation}}
+6.	Helpfulness: It evaluates how effectively and clearly a generated answer helps the user address their query, scoring from 0 to 1 based on accuracy, relevance, clarity, and a friendly, supportive tone. Input: Query: {{query}} Generation: {{generation}}
+7.	Relevance: It evaluates how closely a generated answer stays focused on and directly addresses the user’s query, scoring from 0 to 1 based on whether the content meaningfully contributes to understanding the question without including unrelated or extraneous information. Input: Query: {{query}} Generation: {{generation}}
+8.	Toxicity: It evaluates how harmful or disrespectful a generated answer is, scoring from 0 to 1 based on the presence of offensive language, aggressive tone, demeaning attitudes, or content that promotes negativity or distrust without constructive purpose. Input: Query: {{query}} Generation: {{generation}}
+Ragas Based Evaluation Metrics
+1.	Answer Correctness: It evaluates how well an answer aligns with the ground truth by breaking both into statements and classifying each as correctly supported (TP), unsupported or extra (FP), or missing from the answer despite being in the ground truth (FN), with reasons for each classification. ground truth: {{ground_truth}} answer: {{answer}}
+2.	Answer Critic: It evaluates whether the given input meets the specified criteria, returning a binary verdict of Yes (1) if it does or No (0) if it does not. Criteria Definition: {{criteria_definition}} Input: {{input}}.
+3.	Answer Relevance: It generates a plausible question that could have prompted the given answer and determines whether the answer is noncommittal (1) or committal (0) based on whether it is evasive, vague, or ambiguous.
+4.	Content Precision: It evaluates whether the provided context contributed meaningfully to formulating the given answer. Question: {{question}} Answer: {{answer}} Context: {{context}}
+5.	Context Recall: It evaluates each sentence in the answer to determine whether it is supported or directly derived from the given context, classifying sentences as either attributable to the context or not. Context: {{context}} Answer: {{answer}}
+6.	Faithfulness: It breaks down each sentence in the answer into one or more fully self-contained, clear statements without pronouns, allowing analysis of the complexity and clarity of each part of the response in relation to the question. Question: {{question}} Answer: {{answer}}
+7.	Goal Accuracy: It compares the user’s goal, the desired outcome, and the achieved outcome, returning 1 if the desired and achieved outcomes align with the goal, or 0 if they differ. User Goal: {{user_goal}} Desired Outcome: {{desired_outcome}} Achieved Outcome: {{acheived_outcome}}
+8.	Simple Criteria: It assesses whether the given input meets the specified criteria, producing a judgment based on the alignment of the input with the defined standards. Criteria Definition: {{criteria_definition}} Input: {{input}}
+9.	SQL Semantic Equivalence: It analyzes two SQL queries by first explaining the purpose and logic of each query based on the database schema, and then comparing them to determine whether there are any significant logical differences in their operations or results.
+10.	Topic Adherence Classification: It evaluates whether the given topic belongs to or is covered by any of the provided reference topics, classifying it as a match if it does and as not a match if it does not. Topic: {{topic}} Reference Topics: {{reference_topics}}
+11.	Topic Adherence Refusal: Given a topic, classify if the AI refused to answer the question about the topic. Topic: {{topic}}
+
+
+Rubrics Extraction
+Goal: Convert a raw string rubric into a strict JSON schema. 
+Primary Concern: Structure compliance and information loss.
+
+1. Simple Criteria (CUSTOM) - Requires Criteria to be in the Input Text
+(Criteria Definition: {{criteria_definition}} Input: {{input}}) 
+(Ragas) Best Fit. Use this to validate schema compliance. Define the criteria as: "The output must be valid JSON and contain every rubric criterion mentioned in the input text."
+
+2. Correctness (KIV till Golden Dataset)
+(Langfuse) Requires Ground Truth. If you have a "Gold Standard" JSON for a sample rubric, use this to measure exact alignment.
+
+3. Custom Simple Criteria  (IMPLEMENTED)
+custom-simple-criteria-rubric-extraction
+
+4. Do manual Evaluation: (KIV)
+
+
+
+Agentic Fact checker
+Goal: Verify distinct facts using external tools (Search/Knowledge Base). 
+Primary Concern: Hallucination (making up verifications) and poor search quality.
+
+1. Context Relevance (IMPLEMENTED)
+context-relevance-agent-fact-checker
+Input: Query: {{query}} Context: {{context}}
+(Langfuse): Measure if the search results (Context) retrieved by your agent actually support the fact being checked (Query). If the agent retrieves junk data, the check fails.
+
+2. Faithfulness (NOT IMPLEMENT)
+Question: {{question}} Answer: {{answer}}
+(Ragas): Checks if the agent's validation verdict is derived only from the retrieved context and not from the model's pre-training bias.
+
+3. Hallucination (KIV - not consider knowledge retrieved)
+Input: Query: {{query}} Generation: {{generation}}
+(Langfuse): Similar to faithfulness; ensures the agent isn't confident about a fact it didn't actually find evidence for.
+
+3a. Custom Hallucination (IMPLEMENTED)
+custom-hallucination-agent-fact-checker
+
+4. Answer Critic (KIV - use custom description)
+Definition: {{criteria_definition}} Input: {{input}}.
+(Ragas): Define a custom criteria: "Does the output explicitly cite the source of the validation?"
+
+4a. Custom Answer Critic (IMPLEMENTED)
+custom-answer-critic-source-citation
+
+
+
+Language Analysis and Logic Analysis
+Goal: Analyze an essay for specific linguistic or logical patterns. 
+Primary Concern: Alignment with the rubric and analytical depth.
+
+1. Relevance (Langfuse): (CUSTOM - better description)
+custom-relevance-language-analysis
+custom-relevance-logic-analysis
+Input: Query: {{query}} Generation: {{generation}}
+Ensures the analysis focuses strictly on the provided essay content and doesn't drift into general writing advice unrelated to the specific text.
+
+2. Answer Critic (Ragas): (KIV as it is quite structured)
+Definition: {{criteria_definition}} Input: {{input}}.
+Best Fit. Use this to enforce your analytical framework.
+Example Criteria: "Does the logic analysis identify specific fallacies or logical leaps in the provided text?"
+
+3. Conciseness (Langfuse): (Output JSON quite concise)
+Input: Query: {{query}} Generation: {{generation}}
+These analysis steps feed into the final LLM Judge. You want the JSON outputs to be dense and high-signal, not wordy, so the final judge doesn't get overwhelmed.
+
+
+
+LLM Judge
+Goal: Synthesize all previous inputs into a final Markdown report for the user. 
+Primary Concern: User experience, tone, and data synthesis.
+
+1. Helpfulness (Langfuse): (IMPLEMENT)
+Input: Query: {{query}} Generation: {{generation}}
+Top Priority. Evaluates if the tone is supportive and if the feedback is actionable for the student/user.
+
+2. Faithfulness (Ragas): (IMPLEMENT)
+Question: {{question}} Answer: {{answer}}
+Critical Integration Check. Evaluates if the Final Report acts consistently with the intermediate JSONs (Fact Checker, Logic, Language). It checks: "Did the judge mention a grammar error that the Language-analysis trace actually found?"
+
+3. Toxicity (Langfuse): (KIV)
+Input: Query: {{query}} Generation: {{generation}}
+Essential for student-facing outputs to ensure the feedback is not discouraging, harsh, or offensive.
+
+4. Topic Adherence Refusal (Ragas): (KIV)
+Topic: {{topic}}
+Useful to ensure the model didn't refuse to grade the essay (e.g., incorrectly flagging a sensitive essay topic as a violation).

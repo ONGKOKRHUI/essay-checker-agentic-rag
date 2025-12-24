@@ -76,7 +76,7 @@ async def main():
     # 6. Final Judge (Synthesize Report)
     print("🔃 Synthesizing Final Report...")
     final_report = generate_final_report(
-        essay_content=essay_text,
+        #essay_content=essay_text,
         essay_question=question_text,
         rubric_data=rubric_data,
         logic_data=logic_data,

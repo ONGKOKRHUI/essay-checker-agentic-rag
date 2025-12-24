@@ -8,7 +8,7 @@ from src.observability import get_langfuse_handler
 from src.config import OPENAI_API_KEY, SILICON_FLOW_BASE_URL
 
 def generate_final_report(
-    essay_content: str,
+    #essay_content: str,
     essay_question: str,
     rubric_data: dict,
     logic_data: dict,
@@ -36,7 +36,6 @@ def generate_final_report(
     2.  **Logic Report:** Scores on relevance, structure, and argument strength.
     3.  **Fact Report:** Verification of claims and citations.
     4.  **Language Report:** Analysis of grammar, vocabulary, and tone.
-    5.  **Student Essay:** The raw text.
 
     ### 2. GRADING ALGORITHM (Mental Steps)
     Before writing the report, perform this analysis:
@@ -70,8 +69,6 @@ def generate_final_report(
 
         **LANGUAGE REPORT:** {language_json}
 
-        **STUDENT ESSAY:** {essay_content}
-
         ---
         Generate the **Academic Assessment Report** now.
         """)
@@ -82,7 +79,7 @@ def generate_final_report(
     try:
         report = grading_chain.invoke({
             "essay_question": essay_question,
-            "essay_content": essay_content,
+            #"essay_content": essay_content,
             "rubric_json": json.dumps(rubric_data, indent=2),
             "logic_json": json.dumps(logic_data, indent=2),
             "fact_json": json.dumps(fact_data, indent=2),
