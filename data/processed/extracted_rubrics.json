@@ -1,11 +1,8 @@
 {
-  "title": "ESACa and ESACb IWA Descriptors 2024/2025",
+  "title": "ESACa and ESACb IWA Descriptors 2024/2025 - TUTOR VERSION",
   "context_notes": [
     "Principle of charity applies when judging source acknowledgment.",
-    "ESACa requires min. 7 sources (5 from Reading List, 2 self-selected).",
-    "ESACb requires min. 7 sources (3 from Reading List, 4 self-selected).",
-    "Word count: 1500 words (+/-10%). Penalty applies if not met.",
-    "Plagiarism, off-topic, or misappropriation may result in failing all criteria."
+    "ESAC IWA Descriptors require rater training for accurate use."
   ],
   "criteria": [
     {
@@ -23,7 +20,7 @@
             "- reference list is entirely accurately formatted",
             "- reference list matches citations",
             "- citation formatting is entirely accurate",
-            "- information from sources is acknowledged when appropriate"
+            "- information from sources is acknowledged when appropriate*"
           ]
         },
         {
@@ -43,7 +40,7 @@
             "- reference list is accurately formatted with occasional slips",
             "- reference list matches citations",
             "- citation formatting is mostly accurate",
-            "- information from sources is acknowledged when appropriate"
+            "- information from sources is acknowledged when appropriate*"
           ]
         },
         {
@@ -63,7 +60,7 @@
             "- reference list is accurately formatted with some slips",
             "- reference list does not match citations on one occasion",
             "- citation formatting has some inaccuracies",
-            "- information from sources may not be acknowledged on one or two occasions"
+            "- information from sources may not be acknowledged on one or two occasions*"
           ]
         },
         {
@@ -83,7 +80,7 @@
             "- reference list has frequent formatting issues",
             "- reference list does not match citations on two occasions",
             "- citation formatting has frequent inaccuracies",
-            "- information from sources may not be acknowledged on three occasions"
+            "- information from sources may not be acknowledged on three occasions*"
           ]
         },
         {
@@ -96,7 +93,7 @@
             "- reference list has extensive formatting issues",
             "- reference list does not match citations on three occasions",
             "- citation formatting has extensive inaccuracies",
-            "- information from sources may not be acknowledged on four or more occasions"
+            "- information from sources may not be acknowledged on four or more occasions*"
           ]
         },
         {

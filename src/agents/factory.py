@@ -1,5 +1,6 @@
 # agent initialization
 import json
+import asyncio
 from typing import Literal, List
 from pydantic import BaseModel, Field
 from langchain.agents import create_agent
@@ -101,6 +102,8 @@ async def check_facts(facts_list: List[dict]):
             openai_api_base=SILICON_FLOW_BASE_URL, 
             temperature=0.2,
             max_tokens=800,
+            max_retries=10,  # <--- CRITICAL FIX: Retries aggressively on 429
+            request_timeout=60
         )   
 
         # 3. Create the agent
@@ -113,28 +116,49 @@ async def check_facts(facts_list: List[dict]):
 
         callback = get_langfuse_handler()
 
-        results = []
-        print(f"Starting fact check for {len(facts_list)} facts...")
-        
-        # NOTE: Limited to 5 facts for demonstration speed, remove slice [0:5] for full run
-        for i, fact_data in enumerate(facts_list): 
+        # 5. Define Semaphore for Concurrency Control
+        # Allows only 3 facts to be processed at the same time
+        semaphore = asyncio.Semaphore(3)
+
+        async def process_single_fact(i: int, fact_data: dict):
+            """Helper function to process one fact under semaphore protection."""
             statement = fact_data["statement"]
             
-            # Invoke agent for each fact
-            inputs = {"messages": [HumanMessage(content=f"Evaluate this fact: {statement}")]}
-            
-            # Use structured output parsing
-            response = await agent.ainvoke(inputs, config={"callbacks": [callback],
-                                                           "metadata": {"langfuse_tags": ["agentic-fact-checker"]}
-                                                           })
-            
-            # The last message contains the result. 
-            # We can force the agent to return the structured schema
-            structured_llm = llm_model.with_structured_output(FactEvaluation)
-            final_eval = await structured_llm.ainvoke(response["messages"][-1].content)
-            
-            results.append(final_eval.model_dump())
-            print(f"Validated fact {i+1}: {final_eval.correctness_score}")
+            async with semaphore:
+                try:
+                    # Invoke agent
+                    inputs = {"messages": [HumanMessage(content=f"Evaluate this fact: {statement}")]}
+                    
+                    response = await agent.ainvoke(
+                        inputs, 
+                        config={
+                            "callbacks": [callback],
+                            "metadata": {"langfuse_tags": ["agentic-fact-checker"]}
+                        }
+                    )
+                    
+                    # Parse structure
+                    structured_llm = llm_model.with_structured_output(FactEvaluation)
+                    final_eval = await structured_llm.ainvoke(response["messages"][-1].content)
+                    
+                    print(f"Validated fact {i+1}: {final_eval.correctness_score}")
+                    return final_eval.model_dump()
+                    
+                except Exception as e:
+                    print(f"Error validating fact {i+1}: {e}")
+                    # Return a safe fallback so the whole batch doesn't crash
+                    return {
+                        "statement": statement,
+                        "correctness_score": "undetermined",
+                        "summary_description": f"Error during validation: {str(e)}",
+                        "source_document": ""
+                    }
+
+        # 6. Run tasks in parallel (controlled)
+        print(f"Starting fact check for {len(facts_list)} facts...")
+        
+        tasks = [process_single_fact(i, fact) for i, fact in enumerate(facts_list)]
+        results = await asyncio.gather(*tasks)
 
         return results
         

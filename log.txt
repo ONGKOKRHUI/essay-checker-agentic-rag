@@ -14,95 +14,50 @@ Loading PDF from: C:\Users\HP\Documents\repos\essay-checker-agentic-rag\data\raw
 🎯 Extracting Rubric Criteria...
 Digitizing Rubric...
 🎯 Rubric Criteria Extracted Successfully.
-👩‍🏫 Analyzing Logic...
+🧠 Analyzing Logic...
 Analyzing Logic...
-👩‍🏫 Logic Analyzed Successfully.
-👩‍🏫 Analyzing Language...
+🧠 Logic Analyzed Successfully.
+🗣️ Analyzing Language...
 Analyzing Language...
-👩‍🏫 Language Analyzed Successfully.
-👩‍🏫 Extracting Facts...
+🗣️ Language Analyzed Successfully.
+🤖 Extracting Facts...
 Processing 3 pages for fact extraction...
 Extracted facts from page 1 out of 3 pages
-Page 1 has 6 facts
+Page 1 has 5 facts
 Extracted facts from page 2 out of 3 pages
 Page 2 has 14 facts
 Extracted facts from page 3 out of 3 pages
 Page 3 has 6 facts
-👩‍🏫 Facts Extracted Successfully.
-👩‍🏫 Checking Facts...
+🤖 Facts Extracted Successfully.
+🔃 Checking Facts...
 Connecting to MCP tools...
-Starting fact check for 26 facts...
-Validated fact 1: correct
-Validated fact 2: correct
+Starting fact check for 25 facts...
 Validated fact 3: correct
-Validated fact 1: correct
 Validated fact 2: correct
 Validated fact 1: correct
-Validated fact 1: correct
-Validated fact 2: correct
-Validated fact 3: correct
+Validated fact 6: undetermined
 Validated fact 4: correct
 Validated fact 5: correct
-Validated fact 6: correct
 Validated fact 7: undetermined
-Validated fact 6: correct
-Validated fact 7: undetermined
-Validated fact 7: undetermined
-Validated fact 8: undetermined
+Validated fact 8: correct
 Validated fact 9: correct
-Validated fact 9: correct
-Validated fact 10: correct
 Validated fact 10: correct
 Validated fact 11: correct
 Validated fact 12: correct
 Validated fact 13: correct
-Validated fact 14: correct
 Validated fact 15: undetermined
 Validated fact 16: correct
 Validated fact 17: correct
 Validated fact 18: correct
-Validated fact 14: correct
-Validated fact 15: undetermined
-Validated fact 16: correct
-Validated fact 17: correct
-Validated fact 18: correct
-Validated fact 15: undetermined
-Validated fact 16: correct
-Validated fact 17: correct
-Validated fact 18: correct
-Validated fact 16: correct
-Validated fact 17: correct
-Validated fact 18: correct
-Validated fact 19: correct
-Validated fact 17: correct
-Validated fact 18: correct
-Validated fact 19: correct
 Validated fact 20: correct
-Validated fact 18: correct
 Validated fact 19: correct
-Validated fact 20: correct
-Validated fact 21: correct
-Validated fact 19: correct
-Validated fact 20: correct
-Validated fact 21: correct
-Validated fact 22: correct
-Validated fact 20: correct
-Validated fact 21: correct
-Validated fact 22: correct
-Validated fact 21: correct
-Validated fact 22: correct
 Validated fact 23: correct
+Validated fact 21: correct
 Validated fact 22: correct
-Validated fact 23: correct
-Validated fact 23: correct
-Validated fact 24: correct
-Validated fact 24: correct
 Validated fact 25: correct
-Validated fact 25: correct
-Validated fact 26: correct
-👩‍🏫 All Facts Checked Successfully.
-👩‍🏫 Synthesizing Final Report...
-👩‍🏫 Synthesizing Final Report...
-👩‍🏫 Final Report Synthesized Successfully.
+Validated fact 24: correct
+✅ All Facts Checked Successfully.
+🔃 Synthesizing Final Report...
+✅ Final Report Synthesized Successfully.
 
 ✅ Pipeline Complete! Report saved to: C:\Users\HP\Documents\repos\essay-checker-agentic-rag\data\final_report\final_report.md

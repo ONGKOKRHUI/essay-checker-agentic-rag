@@ -2,152 +2,146 @@
   {
     "statement": "Generative Artificial Intelligence (GenAI) tools, such as ChatGPT and Claude, have fundamentally disrupted the landscape of higher education.",
     "correctness_score": "correct",
-    "summary_description": "Multiple sources confirm that GenAI tools like ChatGPT and Claude have significantly disrupted higher education by altering teaching, learning, and assessment practices.",
+    "summary_description": "Multiple sources confirm that GenAI tools like ChatGPT and Claude have significantly disrupted higher education by transforming teaching, learning, and assessment practices.",
     "source_document": "https://www.aacu.org/newsroom/higher-education-leaders-navigate-ai-disruption"
   },
   {
-    "statement": "GenAI\u2019s ability to synthesise complex information and generate human-like text presents unprecedented challenges to established educational norms",
+    "statement": "GenAI\u2019s ability to synthesise complex information and generate human-like text presents unprecedented challenges to established educational norms.",
     "correctness_score": "correct",
-    "summary_description": "The knowledge base supports the statement by highlighting how GenAI's capabilities, particularly in synthesizing information and generating text, necessitate changes in educational approaches, such as emphasizing critical thinking and adapting assignments.",
-    "source_document": "Critical thinking is a future-proof skill in high demand from employers, page 1"
+    "summary_description": "Multiple sources confirm that GenAI's capabilities disrupt traditional educational practices, raising concerns about academic integrity, ethical challenges, and the need for new pedagogical approaches.",
+    "source_document": "https://www.mdpi.com/2227-7102/13/9/856"
   },
   {
     "statement": "A key concern among educators is the threat GenAI tools pose to academic integrity, particularly in relation to traditional assessment methods.",
     "correctness_score": "correct",
-    "summary_description": "The knowledge base explicitly mentions that GenAI tools threaten academic integrity by undermining originality and scholarly rigor, and educators are concerned about their impact on traditional assessment methods.",
-    "source_document": "AI and assessment in higher education, page 1"
+    "summary_description": "The knowledge base explicitly mentions that AI tools threaten academic integrity by facilitating plagiarism and undermining originality, aligning with the statement.",
+    "source_document": "biases perpetuate unequal access, we show that AI tools risk widening the digital divide, page 1"
   },
   {
     "statement": "Existing plagiarism detection software increasingly struggles to distinguish between human and AI-produced text, creating a 'crisis of trust' in grading systems.",
     "correctness_score": "correct",
-    "summary_description": "Multiple sources confirm that plagiarism detection tools like Turnitin and GPTZero face challenges in reliably distinguishing between human and AI-generated text, leading to concerns about academic integrity.",
-    "source_document": "https://www.sciencedirect.com/science/article/abs/pii/S095741742502024X"
+    "summary_description": "Multiple sources confirm that plagiarism detection tools face challenges in distinguishing AI-generated text from human-written content, leading to concerns about academic integrity and trust in grading systems.",
+    "source_document": "https://arxiv.org/abs/2509.11915"
   },
   {
     "statement": "GenAI generates original outputs by predicting word sequences rather than copying text verbatim, allowing it to evade similarity-based detection tools.",
     "correctness_score": "correct",
-    "summary_description": "Multiple sources confirm that GenAI generates content by predicting word sequences and does not copy text verbatim, which helps it avoid similarity-based detection tools.",
+    "summary_description": "Multiple sources confirm that GenAI generates text by predicting word sequences and does not copy verbatim, which aligns with the statement.",
     "source_document": "https://genai.umich.edu/resources/faculty"
   },
   {
-    "statement": "Students can submit high-quality work with limited cognitive engagement, undermining the credibility of academic qualifications.",
-    "correctness_score": "correct",
-    "summary_description": "The statement is supported by evidence from the knowledge base and web search, which highlight concerns about AI use and limited cognitive engagement affecting academic integrity and credibility.",
-    "source_document": "https://files.eric.ed.gov/fulltext/EJ1460216.pdf"
-  },
-  {
-    "statement": "Enforcement of strict bans is largely ineffective outside controlled examination settings",
+    "statement": "Enforcement of strict bans is largely ineffective outside controlled examination settings.",
     "correctness_score": "undetermined",
-    "summary_description": "The retrieved content discusses limitations of controlled studies but does not directly address the effectiveness of strict bans outside such settings.",
+    "summary_description": "The retrieved content discusses limitations of controlled studies but does not directly address the effectiveness of strict bans outside controlled settings.",
     "source_document": ""
   },
   {
     "statement": "Continued reliance on take-home essays as a primary measure of learning is becoming increasingly unsustainable.",
     "correctness_score": "undetermined",
-    "summary_description": "The retrieved content discusses the impact of AI on education and the risks of efficiency-driven models, but it does not explicitly address the sustainability of take-home essays as a primary measure of learning.",
+    "summary_description": "The knowledge base discusses broader concerns about AI's impact on education but does not specifically address the sustainability of take-home essays as a primary measure of learning.",
     "source_document": ""
   },
   {
     "statement": "GenAI offers significant opportunities to enhance learning through personalisation and instant feedback.",
     "correctness_score": "correct",
-    "summary_description": "Multiple sources confirm that GenAI enhances learning by providing personalized and instant feedback, improving engagement and outcomes.",
+    "summary_description": "Multiple sources confirm that GenAI enhances learning by providing personalized experiences and instant feedback, improving student engagement and outcomes.",
     "source_document": "https://www.nciea.org/blog/evaluating-generative-ai-feedback-in-classroom-assessment-a-meta-synthesis"
   },
   {
     "statement": "Unlike human tutors, AI tools can provide continuous academic support without time constraints.",
     "correctness_score": "correct",
-    "summary_description": "Multiple sources confirm that AI tutors offer 24/7 availability, unlike human tutors who operate within limited schedules.",
-    "source_document": "https://www.sentisight.ai/how-beneficial-can-ai-smart-tutors-be"
+    "summary_description": "Multiple sources confirm that AI tutors offer 24/7 availability and continuous academic support, unlike human tutors who operate within limited schedules.",
+    "source_document": "https://www.quadc.io/blog/bridging-the-gap-between-students-and-academic-success"
   },
   {
     "statement": "Chen et al. (2024) demonstrate that when AI is used as a Socratic tutor\u2014prompting learners through guided questioning rather than direct answers\u2014students show improved critical thinking skills, particularly in STEM disciplines.",
     "correctness_score": "correct",
-    "summary_description": "The statement is supported by research findings indicating that AI-based Socratic tutoring enhances critical thinking skills, especially in STEM education.",
+    "summary_description": "The statement is supported by research findings indicating that AI Socratic tutors significantly enhance critical thinking skills in STEM education.",
     "source_document": "https://arxiv.org/html/2409.05511v1"
   },
   {
     "statement": "GenAI can effectively scaffold learning by adapting explanations to individual proficiency levels",
     "correctness_score": "correct",
-    "summary_description": "Multiple sources confirm that GenAI can personalize learning experiences by adapting explanations and feedback to individual proficiency levels, enhancing comprehension and engagement.",
+    "summary_description": "Multiple sources confirm that GenAI can adapt explanations and learning materials to individual proficiency levels, enhancing personalized learning experiences.",
     "source_document": "https://www.sciencedirect.com/science/article/pii/S0360131525000909"
   },
   {
-    "statement": "Language and formatting support offered by AI allows students, especially second-language writers, to focus on higher-order thinking rather than surface-level accuracy (EduTech Future, 2023).",
+    "statement": "AI's language and formatting support helps students, particularly second-language writers, focus on higher-order thinking rather than surface-level accuracy (EduTech Future, 2023).",
     "correctness_score": "correct",
-    "summary_description": "Multiple sources highlight how AI tools, such as Grammarly and other language processing technologies, assist students, particularly second-language learners, by handling surface-level accuracy, enabling them to focus on higher-order thinking skills.",
-    "source_document": "https://link.springer.com/article/10.1007/s44217-025-00602-7"
+    "summary_description": "Research indicates AI tools aid students, especially second-language learners, by managing language and formatting tasks, freeing cognitive resources for complex thinking.",
+    "source_document": "https://avidopenaccess.org/resource/ai-and-writing"
   },
   {
     "statement": "GenAI can function as an assistive tool that broadens access to academic support and enhances learner autonomy.",
     "correctness_score": "correct",
-    "summary_description": "The knowledge base supports the statement by highlighting GenAI's role as a feedback tool that empowers students and instructors, aids learning, and enhances AI literacy.",
+    "summary_description": "The knowledge base supports the statement by highlighting GenAI's role as a feedback tool for students and instructors, aiding learning and AI literacy.",
     "source_document": "spotlight guide on bringing GenAI into the university classroom, page unspecified"
   },
   {
     "statement": "Assessment reform represents the most sustainable response.",
     "correctness_score": "undetermined",
-    "summary_description": "The retrieved content does not explicitly confirm or contradict the statement about assessment reform being the most sustainable response.",
+    "summary_description": "The retrieved content discusses ethical challenges and pedagogical values in AI integration but does not confirm or contradict the specific claim about assessment reform.",
     "source_document": ""
   },
   {
     "statement": "Universities must shift from evaluating what students know to assessing how they apply knowledge in conjunction with technology.",
-    "correctness_score": "correct",
-    "summary_description": "The statement aligns with contemporary discussions on educational reform, particularly in the context of AI and GenAI integration. Universities are increasingly encouraged to move beyond traditional knowledge-based assessments toward evaluating students' ability to apply knowledge technologically.",
-    "source_document": "https://infosci.arizona.edu/news/assessment-in-the-ai-era"
+    "correctness_score": "undetermined",
+    "summary_description": "The knowledge base acknowledges AI's transformative impact on education and the need for academia to adapt, but it does not explicitly address whether universities should prioritize assessing knowledge application with technology over traditional knowledge evaluation.",
+    "source_document": ""
   },
   {
     "statement": "A prohibition-focused approach fails to acknowledge that AI literacy is increasingly expected in professional contexts (World Economic Forum, 2024).",
     "correctness_score": "correct",
-    "summary_description": "The World Economic Forum's reports and articles emphasize the growing importance of AI literacy in professional contexts, supporting the statement that a prohibition-focused approach would overlook this necessity.",
+    "summary_description": "The World Economic Forum's reports and articles emphasize the growing importance of AI literacy in professional contexts, supporting the statement that prohibition-focused approaches overlook this trend.",
     "source_document": "https://www.weforum.org/stories/2025/07/ai-literacy-and-strategic-transformation"
   },
   {
     "statement": "Assessment methods should evolve to include oral examinations, reflective portfolios, and tasks that require critical evaluation of AI-generated outputs.",
     "correctness_score": "correct",
-    "summary_description": "Multiple sources support the idea that evolving assessment methods to include oral examinations, reflective portfolios, and critical evaluation of AI-generated outputs is beneficial and necessary in the AI age.",
-    "source_document": "https://www.unesco.org/en/articles/whats-worth-measuring-future-assessment-ai-age"
+    "summary_description": "Multiple sources support the evolution of assessment methods to include oral examinations, reflective portfolios, and critical evaluation of AI-generated outputs, emphasizing their importance in modern education.",
+    "source_document": "https://link.springer.com/article/10.1007/s43681-025-00871-w"
   },
   {
     "statement": "The University of Manchester Teaching Framework (2023) emphasises the importance of prioritising learning processes over final products, encouraging students to demonstrate inquiry, verification, and reflection skills.",
     "correctness_score": "correct",
-    "summary_description": "The Assessment for the Future project at the University of Manchester highlights the importance of learning processes, aligning with the Teaching Excellence Framework (TEF) 2023, and emphasizes inquiry, verification, and reflection skills in assessment practices.",
-    "source_document": "https://staffnet.manchester.ac.uk/umitl/projects/assessmentforthefuture"
+    "summary_description": "The University of Manchester's Teaching Excellence Framework (TEF) 2023 highlights a focus on learning processes and student engagement, aligning with the statement's emphasis on inquiry, verification, and reflection.",
+    "source_document": "https://www.manchester.ac.uk/about/teaching-and-learning-excellence/tef"
   },
   {
     "statement": "By embedding AI use within assessment design\u2014such as asking students to critique flawed AI responses\u2014institutions can cultivate critical digital literacy that aligns with contemporary academic and workplace demands.",
     "correctness_score": "correct",
     "summary_description": "The knowledge base supports the statement by emphasizing the importance of teaching students to critically engage with AI outputs, which aligns with cultivating critical digital literacy.",
-    "source_document": "internal knowledge base, page not specified"
+    "source_document": "knowledge_base_document, page 1"
   },
   {
     "statement": "GenAI threatens the integrity of traditional assessments",
     "correctness_score": "correct",
-    "summary_description": "Multiple sources confirm that GenAI poses significant challenges to the integrity of traditional assessments, prompting calls for redesigning evaluation methods.",
-    "source_document": "https://bera-journals.onlinelibrary.wiley.com/doi/full/10.1111/bjet.13585"
+    "summary_description": "The knowledge base supports the statement by discussing how GenAI tools challenge the integrity of traditional assessments and necessitate redesigning evaluation methods.",
+    "source_document": "practice, page 1"
   },
   {
     "statement": "GenAI offers powerful tools for personalised learning",
     "correctness_score": "correct",
-    "summary_description": "Multiple sources confirm that GenAI provides powerful tools for personalised learning, enhancing educational experiences through adaptive feedback and tailored content.",
+    "summary_description": "Multiple sources confirm that GenAI provides tools for personalised learning, enabling customized lesson plans, adaptive feedback, and tailored educational experiences.",
     "source_document": "https://www.teachermagazine.com/au_en/articles/genai-technology-supporting-personalised-learning-and-improving-equity-in-education"
   },
   {
-    "statement": "Banning AI technologies leaves students unprepared for a technology-driven future.",
+    "statement": "Banning AI technologies leaves students unprepared for a technology-driven future",
     "correctness_score": "correct",
-    "summary_description": "Educational experts and articles argue that prohibiting AI technologies in schools hinders students' readiness for a future where AI plays a significant role.",
-    "source_document": "https://www.edweek.org/technology/schools-cant-sit-out-ai-top-u-s-education-department-official-argues/2023/11"
+    "summary_description": "The knowledge base supports the statement by emphasizing the importance of equal access to AI technologies for students to prevent inequality and prepare them for a technology-driven future.",
+    "source_document": "Promoting equal access to AI technologies is essential to counter status quo bias, which tends to preserve existing inequalities. Governments and educational institutions should ensure that all students, regardless of their socioeconomic background, have access to the same AI tools. This effort is crucial for closing the AI gap in education and fostering more equitable outcomes."
   },
   {
     "statement": "Universities should integrate AI literacy into curricula.",
     "correctness_score": "correct",
-    "summary_description": "The knowledge base supports the statement by emphasizing the importance of AI literacy in educational programs and suggesting practical ways to integrate it into curricula.",
-    "source_document": "internal knowledge base, page not specified"
+    "summary_description": "The knowledge base supports the statement by emphasizing the importance of AI literacy for students, educators, and researchers, and suggests practical ways to integrate it into curricula.",
+    "source_document": "knowledge base, page 1"
   },
   {
     "statement": "Universities should redesign assessments to prioritise critical thinking, authenticity, and reflective practice.",
     "correctness_score": "correct",
-    "summary_description": "The knowledge base supports the statement, mentioning the need to rethink past exam and assignment practices to enrich student skills such as critical thinking and analysis, and embracing AI for authentic assessment design.",
-    "source_document": "University of Newcastle, Australia (page unspecified)"
+    "summary_description": "The knowledge base supports the statement by discussing the need for universities to rethink assessment practices to focus on critical thinking and authenticity, especially in the context of AI.",
+    "source_document": "working out how to embrace it to save time and enrich student skills such as critical thinking and analysis, page 1"
   },
   {
     "statement": "The rise of GenAI signals an essential evolution towards more resilient and relevant pedagogical models.",
